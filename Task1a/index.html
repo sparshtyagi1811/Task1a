@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Create a project</h2>
+            <form id="projectForm">
+                <label for="projectName">Project name</label>
+                <input type="text" id="projectName" name="projectName" placeholder="Enter project name here" required>
+
+                <label for="client">Client</label>
+                <div class="client-container">
+                    <select id="client" name="client">
+                        <option value="">Select a client</option>
+                        <option value="client1">Client 1</option>
+                        <option value="client2">Client 2</option>
+                    </select>
+                    <input type="button" id="newClientButton" value="+ New Client">
+                </div>
+
+                <label for="startDate">Dates</label>
+                <div class="date-range">
+                    <input type="date" id="startDate" name="startDate" required>
+                    <span> - </span>
+                    <input type="date" id="endDate" name="endDate" required>
+                </div>
+
+                <label for="notes">Notes</label>
+                <textarea id="notes" name="notes" placeholder="Optional"></textarea>
+
+                <div class="button-group">
+                    <button type="button" id="backButton">Back</button>
+                    <button type="submit" class="next-button">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-container project-type-container">
+            <h2>Project type</h2>
+            <form id="projectTypeForm">
+                <div class="project-type-header">
+                    <label>Project Type</label>
+                    <div class="radio-group">
+                        <input type="radio" id="timeAndMaterials" name="projectType" value="Time and Materials" checked>
+                        <label for="timeAndMaterials">Time & Materials</label>
+
+                        <input type="radio" id="fixedFee" name="projectType" value="Fixed Fee">
+                        <label for="fixedFee">Fixed Fee</label>
+
+                        <input type="radio" id="nonBillable" name="projectType" value="Non-Billable">
+                        <label for="nonBillable">Non-Billable</label>
+                    </div>
+                </div>
+
+                <label>Hourly</label>
+                <div class="hourly-group">
+                    <select id="hourlyRateSelect" name="hourlyRateSelect">
+                        <option value="rate1">Project Hourly Rate</option>
+                        <!-- Add more rates as needed -->
+                    </select>
+                    <input type="text" id="hourlyRate" name="hourlyRate" value="₹ 12,678.00" required>
+                </div>
+
+                <label for="hoursPerPerson">Hours per Person</label>
+                <select id="hoursPerPerson" name="hoursPerPerson">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <!-- Add more options as needed -->
+                </select>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="budgetReset" name="budgetReset">
+                    <label for="budgetReset">Budget resets every month</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="emailAlert" name="emailAlert" checked>
+                    <label for="emailAlert">Send email alerts if project exceeds 
+                        <input type="number" id="budgetAlert" name="budgetAlert" value="80"> % of budget
+                    </label>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="backButton">Back</button>
+                    <button type="submit" class="next-button">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
